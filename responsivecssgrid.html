@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive CSS Grid</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 40% 20% 40%;
+            /*grid-template-column: 1fr 2fr 1fr;*/
+            /*grid-template-column: repeat(3, 1fr);*/
+            /*grid-template-column: repeat(4, 1fr 2fr)*/
+            grid-gap: 1em;
+            /*grid-auto-rows: 100px;*/
+            grid-auto-rows: minmax(100px, auto);
+            /*justify-content: stretch;
+            align-items: end;*/
+        }
+        
+        .wrapper>div {
+            background-color: blue;
+            padding: 1rem;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .wrapper>div:nth-child(odd) {
+            background-color: green;
+        }
+        
+        .nested {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 70px;
+            grid-gap: 1em;
+        }
+        
+        .nested>div {
+            border: 1px solid #333;
+            padding: 1em;
+        }
+        
+        .box1 {
+            /*align-self: start;*/
+            grid-column: 1/3;
+            grid-row: 4/7;
+        }
+        
+        .box2 {
+            /*align-self: end;*/
+            grid-column: 3;
+            grid-row: 4/6;
+        }
+        
+        .box3 {
+            /* align-self: center;*/
+            grid-column: 2/4;
+        }
+        
+        .box4 {
+            /*align-self: auto;*/
+            grid-column: 1;
+            grid-row: 5/8;
+            border: 1px solid #333;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .wrapper,
+            div,
+            .nested,
+            .box1,
+            .box2,
+            .box3,
+            .box4 {
+                display: inline-block;
+                float: none;
+                width: 100%;
+                margin: 0 0 2%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eaque distinctio nostrum aliquid nisi repellat, voluptatibus reprehenderit unde vitae! Assumenda accusantium iure atque nobis veniam in, adipisci quis dicta voluptatum doloribus repellat repudiandae
+            tempora perferendis culpa animi, alias qui facilis dolorum consequuntur voluptatem accusamus esse labore quaerat praesentium. Molestias, odit. Temporibus porro possimus, eos quidem enim mollitia laborum provident consequatur esse ut sapiente
+            pariatur quod at? Soluta illum pariatur nesciunt dolorum! Rerum soluta commodi laboriosam sit dolorum iusto assumenda eius!
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolorum mollitia esse doloremque! Iusto magni reiciendis quidem voluptates deleniti! Commodi!
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eaque distinctio nostrum aliquid nisi repellat, voluptatibus reprehenderit unde vitae! Assumenda accusantium iure atque nobis veniam in, adipisci quis dicta voluptatum doloribus repellat repudiandae
+            tempora perferendis culpa animi, alias qui facilis dolorum consequuntur voluptatem accusamus esse labore quaerat praesentium. Molestias, odit. Temporibus porro possimus, eos quidem enim mollitia laborum provident consequatur esse ut sapiente
+            pariatur quod at? Soluta illum pariatur nesciunt dolorum! Rerum soluta commodi laboriosam sit dolorum iusto assumenda eius!
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolorum mollitia esse doloremque! Iusto magni reiciendis quidem voluptates deleniti! Commodi!
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto quidem incidunt, provident eos sapiente cum porro error adipisci earum, consectetur tempore harum sunt doloribus magnam asperiores nulla. Nostrum tempora illum praesentium dolorum vero, neque
+            quas et reprehenderit deleniti dicta iure sunt hic, delectus est quisquam pariatur, modi illo voluptates rem.
+        </div>
+        <div class="nested">
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+        </div>
+        <div>Practice CSS Grids</div>
+        <div>September 19, 2020</div>
+        <div>Camille Martin</div>
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+        <div class="box box4">Box 4</div>
+    </div>
+</body>
+
+</html>
